@@ -1,0 +1,234 @@
+body {
+    font-family: "Montserrat", sans-serif;
+    background-color: #18181B;
+    background-size: 150% 150%;
+    animation: backgroundAnimation 10s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+}
+
+.profile {
+    animation: loadProfile 0.6s ease-in-out;
+    animation-fill-mode: both;
+    font-size: 0.9rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    max-height: 750px;
+    max-width: 900px;
+}
+
+.profile-bg {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-radius: 10px;
+    background: white;
+    box-shadow: 0 30px 50px -20px rgba(14, 0, 47, 0.21);
+    width: calc(100% - 2vw);
+    height: calc(100% - 15vh);
+    z-index: -1;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    width: 100%;
+} 
+
+picture {
+    width: 75%;
+}
+
+img {
+    object-fit: cover;
+    animation: loadProfileImage 1s ease-in-out 0.5s;
+    animation-fill-mode: both;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0 25px 45px -20px rgba(255, 0, 47, 0.55),
+    inset 0 0px 120px rgba(204, 0, 255, 0.75);
+    display: block;
+    width: 100%;
+    flex: none;
+    background-size: cover;
+    background-position: center;
+}
+
+.profile-info {
+    margin-top: 120px;
+    padding: 8% 8% 2% 8%;
+    position: relative;
+    left: -3vw;
+}
+
+.profile-info h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin: 0.7rem;
+    position: absolute;
+    animation-fill-mode: both;
+}
+
+.profile-info h1.greeting {
+    animation: titleEffect 1s cubic-bezier(0,0.2,0.4,1);
+    top: -8vh;
+    left: 3vw;
+    font-family: 'Space Mono', monospace;
+    color: whitesmoke;
+} 
+
+.profile-info h1.my-name {
+    animation: titleEffect 1s cubic-bezier(0,0,0.3,1);
+    top: 1vh;
+    left: 3vw;
+}
+
+svg {
+    padding: 2ch;
+}
+
+.profile-info p {
+    line-height: 1.5rem;
+    color:rgb(142, 140, 140);
+}
+
+.profile-info h2:nth-child(n+1) {
+    width:fit-content;
+}
+
+.link {
+    font-family: 'Space Mono', monospace;
+    display: flex;
+    color: transparent;
+    text-decoration: none;
+    padding: 3px;
+    width: fit-content;
+    background: linear-gradient(to right, rgb(251, 241, 95), rgb(240, 171, 60), rgb(225, 45, 108), rgb(199, 43, 178));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 300% 100%;
+    background-position: 100%;
+    transition: background-position 500ms ease;
+}
+
+.link:hover {
+    background-position: 0 100%;
+}
+
+@media only screen and (max-width: 600px) {
+    .profile {
+        margin: 3%;
+        height: 97%;
+    }
+    .container {
+        height: 86%;
+        flex-direction: column;
+    }
+    .profile-image {
+        height: 40%;
+        width: calc(100% - 90px);
+    }
+    .profile-bg {
+        width: 100%;
+    }
+    .profile-info h1.greeting {
+        display: none;
+    }
+    .profile-info h1.my-name {
+        top: -10vh;
+    }
+}
+
+@media only screen and (max-height: 600px) {
+    .profile-bg {
+        height: 75%;
+        width: 100%;
+    }
+    
+    .profile-info h1.greeting {
+        display: none;
+    }
+
+}
+
+@media only screen and (max-height: 800px) {
+    .profile-bg {
+        height: 75%;
+        width: 100%;
+    }
+    
+    .profile-info h1.greeting {
+        top: -10vh;
+    }
+}
+
+
+@keyframes backgroundAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes loadProfile {
+    from{
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes loadProfileImage {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes titleEffect {
+    from {
+        opacity:0;
+        transform: translateX(-75px);
+    }
+    to {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+.fancy {
+    background: linear-gradient(90deg, #f8f684, #d33a65, #9198e5);
+    background-size: 300%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    animation: animate-text 5s ease-in-out infinite;
+    -moz-animation: animate-text 5s ease-in-out infinite;
+    -webkit-animation: animate-text 5s ease-in-out infinite;
+    animation: animate-text 5s ease-in-out infinite;
+}
+
+@keyframes animate-text {
+    0% { background-position: 0px 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0px 50%; }
+}

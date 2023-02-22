@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>About Me</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+    <section class="cover-bg">
+        <header>
+            <nav class="container nav-bar">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>   
+        </header>
+        
+        <section class="container">
+            
+            <div class="title">
+                <svg style="color: white" xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16"> <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z" fill="white"></path> </svg>
+                <div class="smallsep heading"></div>
+                <h1 class="heading">Jonathan Yin</h1>
+                <h2 class="heading">University of California, San Diego</h2>
+                <a class="smoothscroll" href="#about">
+                    <div class="mouse">
+                        <div class="wheel"></div>
+                    </div>
+                </a> 
+            </div>
+            <a class="smoothscroll" href="#about">
+                <div class="scroll-bar"></div>
+            </a>
+        </section>
+    </section>
+    
+    <main>
+        <section id="about">
+            
+            <section class="wrapper bg container">
+                <div class="row gtr-50">
+                    <div class="col-8">
+                        <header>
+                            <h2>
+                                About Me
+                            </h2>
+                        </header>
+                        <p>
+                            Hi, I'm Jonathan Yin, a 3rd year undergraduate majoring in Mathematics and Computer Science at UCSD.
+                            I have experience working in team-oriented environments on projects involving
+                            game design, web development, 3D modeling/rendering, and more!
+                        </p>
+                        <p>
+                            Throughout my academic career, I have honed my skills in object-oriented programming, computer architecture, 
+                            web technologies, and operating systems. Working independently and as part of a team, I have experience with 
+                            software development processes such as agile, as well as CI/CD tools. As an engineer, I aspire to develop 
+                            solid software and long for a challenge that keeps me up at night. I aim to bring an open mind to learning 
+                            the latest technologies and practices in my work.
+                        </p>
+                        <p>
+                            I'm always curious to hear from new people about new thoughts, ideas, problems, projects or collaborations. 
+                            If you have something on your mind, feel free to get in touch with me!
+                        </p>
+                        <footer>
+                            <ul class="buttons">
+                                <li>
+                                    <a href="Resume.pdf" class="resume button-link" download>
+                                        <span>Resume</span>
+                                    </a>
+                                    
+                                </li>
+                            </ul>
+                        </footer>
+                    </div>
+                    <div class="col-4">
+                        <picture>
+                            <source media="(min-width:1000px)" srcset="standing.jpg">
+                            <source media="(min-width:650px)" srcset="standing.jpg">
+                            <source media="(min-width:465px)" srcset="standing.jpg" width="300px">
+                            <img src="standing.jpg" style="height: 100%; width: 100%; object-fit: contain" alt="Standing man in mall hallway" id="main-img">
+                        </picture>
+                        
+                    </div>
+                </div>
+            </section>
+            
+        </section>
+        
+        <section id="projects">
+            <h2>Check out some of my projects!</h2>
+            <div class="container">
+                <div class="carousel">
+                    <picture>
+                        <source media="(min-width:1000px)" srcset="sustainable_cookies_map.png">
+                        <source media="(min-width:650px)" srcset="sustainable_cookies_map.png">
+                        <source media="(min-width:465px)" srcset="sustainable_cookies_map.png" width="300px">
+                        <img src="sustainable_cookies_map.png" alt="Picture of mapping site" width="500px" height="260" draggable="false" class="project-img">
+                    </picture>
+                    <picture>
+                        <source media="(min-width:1000px)" srcset="uberclone.png">
+                        <source media="(min-width:650px)" srcset="uberclone.png">
+                        <source media="(min-width:465px)" srcset="uberclone.png" width="300px">
+                        <img src="uberclone.png" alt="Picture of IDE and rideshare app" width="500px" draggable="false" class="project-img">
+                    </picture>
+                    <picture>
+                        <source media="(min-width:1000px)" srcset="job_tracker.png">
+                        <source media="(min-width:650px)" srcset="job_tracker.png">
+                        <source media="(min-width:465px)" srcset="job_tracker.png" width="300px">
+                        <img src="job_tracker.png" alt="Picture of job application tracking site" width="500px" draggable="false" class="project-img">
+                    </picture>
+                    <picture>
+                        <source media="(min-width:1000px)" srcset="stanford_medicine.png">
+                        <source media="(min-width:650px)" srcset="stanford_medicine.png">
+                        <source media="(min-width:465px)" srcset="stanford_medicine.png" width="300px">
+                        <img src="stanford_medicine.png" alt="Stanford Medicine logo" width="500px" draggable="false" class="project-img">
+                    </picture>
+                    <picture>
+                        <source media="(min-width:1000px)" srcset="shooter_game.png">
+                        <source media="(min-width:650px)" srcset="shooter_game.png">
+                        <source media="(min-width:465px)" srcset="shooter_game.png" width="300px">
+                        <img src="shooter_game.png" alt="Picture of 3D shooter game" width="500px" draggable="false" class="project-img">
+                    </picture>
+                    <picture>
+                        <source media="(min-width:1000px)" srcset="connectme.png">
+                        <source media="(min-width:650px)" srcset="connectme.png">
+                        <source media="(min-width:465px)" srcset="connectme.png" width="300px">
+                        <img src="connectme.png" alt="Picture of social networking site" width="500px" draggable="false" class="project-img">
+                    </picture>
+                </div>
+                
+            </div>
+            
+        </section>
+    </main>
+    
+    <footer>
+        <section id="contact" class="contact">
+            <header>
+                <h2>
+                    Contact Me
+                </h2>
+            </header>
+            <section class="wrapper bg container">
+                
+                <section class="get-in-touch">
+                    <form class="contact-form row">
+                        
+                        <input name="name" type="text" class="input-text" placeholder="Name" />   
+                        <input name="email" type="text" class="input-text" placeholder="Email" />
+                        <textarea name="text" class="input-text" placeholder="Comment" rows="5"></textarea>
+                        <input type="submit" value="Submit"/>
+                    </form>
+                </section>
+                
+            </section>
+        </section>
+    </footer>
+</body>
+</html>
