@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Custom Dialogs</title>
+</head>
+<body>
+    <button id="alert-button">Show Alert</button>
+    <button id="confirm-button">Show Confirm</button>
+    <button id="prompt-button">Show Prompt</button>
+    
+    <dialog id="alert-dialog">
+        <p id="alert-message"></p>
+        <button id="alert-ok-button">OK</button>
+    </dialog>
+    
+    <dialog id="confirm-dialog">
+        <p id="confirm-message"></p>
+        <button id="confirm-ok-button">OK</button>
+        <button id="confirm-cancel-button">Cancel</button>
+    </dialog>
+    
+    <dialog id="prompt-dialog">
+        <p id="prompt-message"></p>
+        <input type="text" id="prompt-input">
+        <button id="prompt-ok-button">OK</button>
+        <button id="prompt-cancel-button">Cancel</button>
+    </dialog>
+    
+    <br>
+    <output id="prompt-output"></output>
+    
+    <script src="customdialog.js"></script>
+</body>
+</html>
