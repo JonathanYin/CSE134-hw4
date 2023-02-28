@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Custom Dialogs</title>
+    <script type="module">
+        import {customDialog} from '/customdialog.js';
+        window.onload = customDialog;
+    </script>
 </head>
 <body>
     <button id="alert-button">Show Alert</button>
@@ -30,6 +34,5 @@
     <br>
     <output id="prompt-output"></output>
     
-    <script src="customdialog.js"></script>
 </body>
 </html>
