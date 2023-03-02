@@ -1,26 +1,26 @@
 const blogModule = (function() {
-  // Get the list of posts from localStorage or initialize it if it doesn't exist
+  // Get the list of posts from localStorage 
   let posts = JSON.parse(localStorage.getItem('posts')) || [
     {
       index: 0,
-      title: 'First Post',
+      title: 'Post 1',
       date: '2023-03-01',
-      summary: 'This is the first post on my blog',
+      summary: 'First post on my blog',
     },
     {
       index: 1,
-      title: 'Second Post',
+      title: 'Post 2',
       date: '2023-03-02',
-      summary: 'This is the second post on my blog',
+      summary: 'Second post on my blog',
     },
   ];
   
-  // Function to save the list of posts to localStorage
+  // Save the list of posts to localStorage
   function savePosts() {
     localStorage.setItem('posts', JSON.stringify(posts));
   }
   
-  // Function to update the HTML to display the list of posts
+  // Update the HTML to display the list of posts
   function updatePostsHTML() {
     const list = document.querySelector('#post-list');
     list.innerHTML = '';
@@ -114,7 +114,7 @@ const blogModule = (function() {
     });
   }
   
-  // Function to attach event listeners to the edit and delete buttons
+  // Attach event listeners to the edit and delete buttons
   function attachEventListeners() {
     const editButtons = document.querySelectorAll('.edit-btn');
     const deleteButtons = document.querySelectorAll('.delete-btn');
@@ -141,7 +141,7 @@ const blogModule = (function() {
     
   }
   
-  // Initialize the HTML and attach event listeners
+  // Initialize event listeners
   updatePostsHTML();
   
   // Return the public API
@@ -150,7 +150,7 @@ const blogModule = (function() {
   };
 })();
 
-// Attach event listener to the Add button
+// Attach event listener to the add button
 const addButton = document.querySelector('#add-post-btn');
 addButton.addEventListener('click', function() {
   blogModule.showPostModal();
