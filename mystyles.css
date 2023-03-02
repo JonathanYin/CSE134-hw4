@@ -1,0 +1,141 @@
+body {
+    background-color: #f7f7f7;
+    font-family: 'Courier New', Courier, monospace, sans-serif;
+    margin: 0;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+#post-list {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 20px;
+    position: relative;
+}
+
+.post-title {
+    color: #333;
+    font-size: 24px;
+    margin: 0 0 10px;
+}
+
+.post-date {
+    color: #999;
+    font-size: 14px;
+    margin: 0 0 10px;
+}
+
+.post-summary {
+    color: #666;
+    font-size: 18px;
+    margin: 0 0 20px;
+}
+
+.edit-button,
+.delete-button {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: #333;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 5px 10px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.edit-button {
+    right: 110px;
+}
+
+.edit-button:hover,
+.delete-button:hover {
+    background-color: #eee;
+}
+
+#add-post-btn {
+    background-color: #5cb85c;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px 20px;
+    margin: 20px 0;
+}
+
+#add-post-btn:hover {
+    background-color: #449d44;
+}
+
+#post-dialog,
+#edit-dialog,
+#delete-dialog {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="date"] {
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    font-size: 16px;
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 100%;
+}
+
+button[type="submit"],
+button[type="button"] {
+    background-color: #5cb85c;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px 20px;
+    margin-right: 10px;
+}
+
+button[type="submit"]:hover,
+button[type="button"]:hover {
+    background-color: #449d44;
+}
+
+#cancel {
+    background-color: #d9534f;
+}
+
+#confirm-delete-button {
+    background-color: #d9534f;
+    margin-right: 10px;
+}
+
+#confirm-delete-button:hover,
+button[type="button"]:hover {
+    background-color: #c9302c;
+}
