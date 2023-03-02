@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog Posts</title>
+</head>
+<body>
+    <h1>Blog Posts</h1>
+    <ul id="post-list"></ul>
+    
+    <button id="add-post-btn">Add Post</button>
+    
+    <template id="post-template">
+        <li>
+            <h2 class="post-title"></h2>
+            <p class="post-date"></p>
+            <p class="post-summary"></p>
+            <button class="edit-button">Edit</button>
+            <button class="delete-button">Delete</button>
+        </li>
+    </template>
+    
+    <dialog id="post-dialog">
+        <form id="post-form">
+            <label for="post-title">Title:</label>
+            <input type="text" id="post-title" name="post-title" required>
+            
+            <label for="post-date">Date:</label>
+            <input type="date" id="post-date" name="post-date" required>
+            
+            <label for="post-summary">Summary:</label>
+            <input type="text" id="post-summary" name="post-summary" required>
+            
+            <button type="submit">Submit</button>
+            <button type="button" id="cancel">Cancel</button>
+        </form>
+    </dialog>
+    
+    <dialog id="edit-dialog">
+        <form id="edit-form">
+            <input type="hidden" id="edit-post-index">
+            
+            <label for="edit-title">Title:</label>
+            <input type="text" id="edit-title" name="edit-title" required>
+            
+            <label for="edit-date">Date:</label>
+            <input type="date" id="edit-date" name="edit-date" required>
+            
+            <label for="edit-summary">Summary:</label>
+            <input type="text" id="edit-summary" name="edit-summary" required>
+            
+            <button type="submit">Save</button>
+        </form>
+    </dialog>
+    
+    <dialog id="delete-dialog">
+        <p>Are you sure you want to delete this post?</p>
+        <button id="confirm-delete-button">Yes</button>
+        <button>Cancel</button>
+    </dialog>
+    
+    <script type="module" src="blog.js"></script>
+</body>
+</html>
