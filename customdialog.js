@@ -50,6 +50,7 @@ export function customDialog() {
     });
     
     promptOkButton.addEventListener('click', () => {
+        promptInput.value = DOMPurify.sanitize(promptInput.value);
         if (promptInput.value === '') {
             promptOutput.textContent = 'User didn\'t enter anything';
         } else {
