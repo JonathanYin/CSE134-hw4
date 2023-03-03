@@ -1,13 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>About Me</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js"></script>
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-10XNREL908"></script>
     <script>
@@ -17,13 +10,20 @@
         
         gtag('config', 'G-10XNREL908');
     </script>
+    <title>About Me</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
 </head>
 <body>
     <section class="cover-bg">
         <header>
             <nav class="container nav-bar">
-                <ul>
+                <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#projects">Projects</a></li>
@@ -105,49 +105,55 @@
         
         <section id="projects">
             <h2>Check out some of my projects!</h2>
-            <div class="container">
-                <div class="carousel">
+            
+            <div class="slider">
+                <div class="arrow" id="left-arrow"></div>
+                <div class="slide first active" id="slide-1">
                     <picture>
                         <source media="(min-width:1000px)" srcset="sustainable_cookies_map.png">
                         <source media="(min-width:650px)" srcset="sustainable_cookies_map.png">
                         <source media="(min-width:465px)" srcset="sustainable_cookies_map.png" width="300px">
-                        <img src="sustainable_cookies_map.png" alt="Picture of mapping site" width="500px" height="260" draggable="false" class="project-img">
+                        <img src="sustainable_cookies_map.png" alt="Picture of mapping site" width="500px" height="260" draggable="false" class="project-img" title="Geocoding web app">
                     </picture>
+                </div>
+                <div class="slide next" id="slide-2">
                     <picture>
                         <source media="(min-width:1000px)" srcset="uberclone.png">
                         <source media="(min-width:650px)" srcset="uberclone.png">
                         <source media="(min-width:465px)" srcset="uberclone.png" width="300px">
-                        <img src="uberclone.png" alt="Picture of IDE and rideshare app" width="500px" draggable="false" class="project-img">
+                        <img src="uberclone.png" alt="Picture of IDE and rideshare app" width="500px" draggable="false" class="project-img" title="Uber clone app">
                     </picture>
+                </div>
+                <div class="slide" id="slide-3">
                     <picture>
                         <source media="(min-width:1000px)" srcset="job_tracker.png">
                         <source media="(min-width:650px)" srcset="job_tracker.png">
                         <source media="(min-width:465px)" srcset="job_tracker.png" width="300px">
-                        <img src="job_tracker.png" alt="Picture of job application tracking site" width="500px" draggable="false" class="project-img">
+                        <img src="job_tracker.png" alt="Picture of job application tracking site" width="500px" draggable="false" class="project-img" title="Job application tracker">
                     </picture>
+                </div>
+                <div class="slide" id="slide-4">
                     <picture>
                         <source media="(min-width:1000px)" srcset="stanford_medicine.png">
                         <source media="(min-width:650px)" srcset="stanford_medicine.png">
                         <source media="(min-width:465px)" srcset="stanford_medicine.png" width="300px">
-                        <img src="stanford_medicine.png" alt="Stanford Medicine logo" width="500px" draggable="false" class="project-img">
+                        <img src="stanford_medicine.png" alt="Stanford Medicine logo" width="500px" draggable="false" class="project-img" title="Stanford surgery survey to text app">
                     </picture>
+                </div>
+                <div class="slide last prev" id="slide-5">
                     <picture>
                         <source media="(min-width:1000px)" srcset="shooter_game.png">
                         <source media="(min-width:650px)" srcset="shooter_game.png">
                         <source media="(min-width:465px)" srcset="shooter_game.png" width="300px">
-                        <img src="shooter_game.png" alt="Picture of 3D shooter game" width="500px" draggable="false" class="project-img">
-                    </picture>
-                    <picture>
-                        <source media="(min-width:1000px)" srcset="connectme.png">
-                        <source media="(min-width:650px)" srcset="connectme.png">
-                        <source media="(min-width:465px)" srcset="connectme.png" width="300px">
-                        <img src="connectme.png" alt="Picture of social networking site" width="500px" draggable="false" class="project-img">
+                        <img src="shooter_game.png" alt="Picture of 3D shooter game" width="500px" draggable="false" class="project-img" title="3D Unity shooter game">
                     </picture>
                 </div>
-                
+                <div class="arrow" id="right-arrow"></div>
             </div>
             
+            
         </section>
+        <div id="dotsContainer"></div>
     </main>
     
     <footer>
@@ -172,5 +178,101 @@
             </section>
         </section>
     </footer>
+    
+    <script>
+        const slides = Array.from(document.getElementsByClassName("slide"));
+        const activeSlide = Array.from(document.getElementsByClassName("active"))[0].id;
+        const firstSlide = Array.from(document.getElementsByClassName("first"))[0].id;
+        const lastSlide = Array.from(document.getElementsByClassName("last"))[0].id;
+        const firstId = parseInt(firstSlide.slice(firstSlide.length - 1))
+        const lastId = parseInt(lastSlide.slice(lastSlide.length - 1))
+        
+        let activeId = parseInt(activeSlide.slice(activeSlide.length - 1))
+        let nextId = activeId + 1
+        let prevId = slides.length
+        
+        function getSlide(idNum) {
+            return document.getElementById(`slide-${idNum}`)
+        }
+        
+        function incrementIds() {
+            if (prevId === lastId) {
+                activeId++
+                nextId++
+                prevId = firstId
+            } else if (nextId + 1 > lastId) {
+                activeId = lastId
+                nextId = firstId
+                prevId = lastId - 1
+            } else if (nextId === firstId) {
+                activeId = firstId
+                prevId = lastId
+                nextId = firstId + 1
+            }else {
+                nextId++
+                prevId++
+                activeId++
+            }
+        }
+        
+        function decrementIds() {
+            if (prevId === firstId) {
+                prevId = lastId
+                activeId = firstId
+                nextId = firstId + 1
+            } else if (prevId === lastId) {
+                activeId = lastId
+                prevId = lastId - 1
+                nextId = firstId
+            } else if (activeId === lastId) {
+                nextId = lastId
+                prevId--
+                activeId--
+            }else {
+                nextId--
+                prevId--
+                activeId--
+            }
+        }
+        
+        function removeClasses() {
+            getSlide(activeId).classList.remove('active');
+            getSlide(prevId).classList.remove('prev')
+            getSlide(nextId).classList.remove('next')
+        }
+        function addClases() {
+            getSlide(prevId).classList.add('prev')
+            getSlide(nextId).classList.add('next')
+            getSlide(activeId).classList.add('active');
+        }
+        
+        function navForward(e) {
+            removeClasses()
+            incrementIds()
+            addClases()
+        } 
+        
+        function navBack(e) {
+            removeClasses()
+            decrementIds()
+            addClases()
+        }
+        
+        document.addEventListener('click', e => {
+            if (e.target.matches('#left-arrow')) {
+                navBack(e)
+            }
+            
+            if(e.target.matches('#right-arrow')) {
+                navForward(e)
+            }
+        })
+        
+        document.addEventListener('keydown', e => {
+            if (e.code === "ArrowRight") navForward()
+            if (e.code === "ArrowLeft") navBack()
+        })
+        
+    </script>
 </body>
 </html>
